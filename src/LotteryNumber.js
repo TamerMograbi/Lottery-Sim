@@ -1,13 +1,12 @@
-import React,{useState} from "react"
+import React from "react"
 import './LotteryNumber.css'
 
-function LotteryNumber() {
-    const [text,setText] = useState("")
+function LotteryNumber(props) {
     function onHandleChange(event) {
         const {value} = event.target
-        setText(value)
+        props.onNumChange(value)
     }
-    return <textarea rows={3} cols={5} className="num" onChange={onHandleChange} value={text}> </textarea>
+    return <textarea rows={3} cols={5} className="num" onChange={onHandleChange} value={props.text}> </textarea>
 }
 
 export default LotteryNumber
