@@ -27,12 +27,18 @@ function App() {
     return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={false}/>
   })
 
+  function handleClick() {
+    console.log('I was clicked')
+  }
+
   return (
     <div className="App">
         <h1> Lottery Sim</h1>
       <div className="NumContainer">
         {mappedLotteryNumbers}
       </div>
+      <h4>Pick 5 numbers between 1-70 and the last between 1-25</h4>
+      <button className="simButton" onClick={handleClick}>Start Sim</button> 
     </div>
   );
 }
