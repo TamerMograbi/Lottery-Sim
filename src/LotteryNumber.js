@@ -6,7 +6,13 @@ function LotteryNumber(props) {
         const {value} = event.target
         props.onNumChange(value)
     }
-    return <textarea rows={3} cols={5} className="num" onChange={onHandleChange} value={props.text}> </textarea>
+    let className = 'normalNum'
+    console.log(props)
+    if(props.isMegaBall) {
+        console.log('asdas')
+        className = 'megaballNum'
+    }
+    return <textarea className={className} rows={3} cols={5} onChange={onHandleChange} value={props.text}> </textarea>
 }
 
 export default LotteryNumber

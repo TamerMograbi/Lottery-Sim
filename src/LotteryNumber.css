@@ -1,6 +1,17 @@
-textarea{
+.normalNum{
     resize: none;
     text-align: center;
     font-size: 30px;
     margin-left: 10px;
+    border-radius: 15px;
+}
+
+.megaballNum{
+    resize: none;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 10px;
+    border-radius: 15px;
+    border-color: red;
+    border-width: 2px;
 }
