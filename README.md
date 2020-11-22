@@ -1,2 +1,2 @@
 # Lottery Sim
-too early as it needs more work
+Building small project to learn React and js
