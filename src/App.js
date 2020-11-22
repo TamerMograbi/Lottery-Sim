@@ -6,6 +6,7 @@ function App() {
   const MEGA_BALL_INDEX = 5;
   const MEGA_BALL_MAX = 25;
   const NORMAL_BALL_MAX = 70;
+
   const [num1,setNum1] = useState("");
   const [num2,setNum2] = useState("");
   const [num3,setNum3] = useState("");
@@ -14,6 +15,7 @@ function App() {
   const [num6,setNum6] = useState("");
   const [generatednum,setGeneratedNum] = useState([]);
   const [myCount,setMyCount] = useState(0);
+  const [isSimStarted,setIsSimStarted] = useState(false);
 
   const stateFuncs = [setNum1,setNum2,setNum3,setNum4,setNum5,setNum6];
   const nums = [num1,num2,num3,num4,num5,num6];
@@ -32,7 +34,7 @@ function App() {
   })
 
   useEffect(() => {
-    if(myCount !== 10000) {
+    if(isSimStarted) {
       setMyCount(prevCount => prevCount + 1);
       const rndNums = getSixRandomNums();
       const isWinning = rndNums.every((num,index) => num === nums[index])
@@ -44,7 +46,11 @@ function App() {
   },[myCount])
 
   async function handleClick() {
-    setMyCount(1);
+    setIsSimStarted(prevVal => !prevVal);
+    if(!isSimStarted) {
+      setMyCount(prev => prev + 1);
+    }
+    
   }
 
   function getSixRandomNums() {
@@ -59,7 +65,7 @@ function App() {
       
     })
   }
-
+  let buttonText = isSimStarted ? "Stop Sim" : "Start Sim"
   return (
     <div className="App">
         <h1> Lottery Sim</h1>
@@ -67,7 +73,7 @@ function App() {
         {mappedLotteryNumbers}
       </div>
       <h4>Pick 5 numbers between 1-70 and the last between 1-25</h4>
-      <button className="simButton" onClick={handleClick}>Start Sim</button> 
+      <button className="simButton" onClick={handleClick}>{buttonText}</button> 
       <h2>{generatednum.join(" ")}</h2>
       <h2>Number Of Trials: {myCount}</h2>
     </div>
