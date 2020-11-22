@@ -68,7 +68,7 @@ function App() {
       </div>
       <h4>Pick 5 numbers between 1-70 and the last between 1-25</h4>
       <button className="simButton" onClick={handleClick}>Start Sim</button> 
-      <h2>Generated Number: {generatednum}</h2>
+      <h2>{generatednum.join(" ")}</h2>
       <h2>Number Of Trials: {myCount}</h2>
     </div>
   );
