@@ -1,6 +1,6 @@
 import './App.css';
 import LotteryNumber from './LotteryNumber'
-import React,{useState} from "react"
+import React,{useEffect, useState} from "react"
 
 function App() {
   const MEGA_BALL_INDEX = 5;
@@ -12,7 +12,8 @@ function App() {
   const [num4,setNum4] = useState("");
   const [num5,setNum5] = useState("");
   const [num6,setNum6] = useState("");
-  const [generatednum,setGeneratedNum] = useState(0);
+  const [generatednum,setGeneratedNum] = useState([]);
+  const [myCount,setMyCount] = useState(0);
 
   const stateFuncs = [setNum1,setNum2,setNum3,setNum4,setNum5,setNum6];
   const nums = [num1,num2,num3,num4,num5,num6];
@@ -30,20 +31,20 @@ function App() {
     return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={false}/>
   })
 
-  function handleClick() {
-    let count = 1000000;
-    while(count > 0) {
-      //console.log('count = ',count)
-      const rndNums = getSixRandomNums()
+  useEffect(() => {
+    if(myCount !== 10000) {
+      setMyCount(prevCount => prevCount + 1);
+      const rndNums = getSixRandomNums();
       const isWinning = rndNums.every((num,index) => num === nums[index])
       if(isWinning) {
         console.log('unbelievable you won!');
       }
-      setGeneratedNum(count)
-      count--
+      setGeneratedNum(rndNums)
     }
-    console.log('finished loop');
+  },[myCount])
 
+  async function handleClick() {
+    setMyCount(1);
   }
 
   function getSixRandomNums() {
@@ -68,6 +69,7 @@ function App() {
       <h4>Pick 5 numbers between 1-70 and the last between 1-25</h4>
       <button className="simButton" onClick={handleClick}>Start Sim</button> 
       <h2>Generated Number: {generatednum}</h2>
+      <h2>Number Of Trials: {myCount}</h2>
     </div>
   );
 }
