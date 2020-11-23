@@ -1,11 +1,14 @@
 import './css/App.css'
 import LotteryNumber from './LotteryNumber'
 import React,{useEffect, useState} from "react"
+import {getSixRandomNums} from './util'
+
+const MEGA_BALL_INDEX = 5
+const MEGA_BALL_MAX = 25
+const NORMAL_BALL_MAX = 70
 
 function App() {
-  const MEGA_BALL_INDEX = 5
-  const MEGA_BALL_MAX = 25
-  const NORMAL_BALL_MAX = 70
+  
 
   const [num1,setNum1] = useState("")
   const [num2,setNum2] = useState("")
@@ -53,19 +56,7 @@ function App() {
     }
     
   }
-
-  function getSixRandomNums() {
-    let rndNums = new Array(6).fill(0)
-    return rndNums.map((num,index) => {
-      if(index === MEGA_BALL_INDEX) {
-        return 1 + Math.floor(Math.random() * Math.floor(MEGA_BALL_MAX))
-      }
-      else {
-        return 1 + Math.floor(Math.random() * Math.floor(NORMAL_BALL_MAX))
-      }
-      
-    })
-  }
+  
   let buttonText = isSimStarted ? "Stop Sim" : "Start Sim"
   return (
     <div className="App">
@@ -81,4 +72,5 @@ function App() {
   )
 }
 
+export {MEGA_BALL_MAX,NORMAL_BALL_MAX,MEGA_BALL_INDEX}
 export default App
