@@ -1,5 +1,5 @@
 import React from "react"
-import './LotteryNumber.css'
+import './css/LotteryNumber.css'
 
 function LotteryNumber(props) {
     function onHandleChange(event) {
