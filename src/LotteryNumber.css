@@ -1,6 +1,6 @@
 input{
-    width: 7vw;
-    height: 11vh;
+    width: 85px;
+    height: 85px;
     outline: none;
     text-align: center;
     font-size: 30px;
@@ -17,3 +17,6 @@ input{
     border-color: red;
     border-width: 2px;
 }
+
+
+
