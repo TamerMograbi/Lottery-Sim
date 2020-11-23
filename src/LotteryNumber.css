@@ -1,19 +1,19 @@
-.normalNum{
-    resize: none;
+input{
+    width: 7vw;
+    height: 11vh;
+    outline: none;
     text-align: center;
     font-size: 30px;
     margin-left: 10px;
     border-radius: 15px;
-    outline: none;
+}
+
+.normalNum{
+    border-color: black;
+    border-width: 1px;
 }
 
 .megaballNum{
-    resize: none;
-    text-align: center;
-    font-size: 30px;
-    margin-left: 10px;
-    border-radius: 15px;
     border-color: red;
     border-width: 2px;
-    outline: none;
 }

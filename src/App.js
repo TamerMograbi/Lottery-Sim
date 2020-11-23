@@ -27,10 +27,11 @@ function App() {
   })
 
   const mappedLotteryNumbers = nums.map((num,index) => {
+    let isMegaBall = false;
     if(index === MEGA_BALL_INDEX) {
-      return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={true}/>
+      isMegaBall = true;
     }
-    return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={false}/>
+    return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={isMegaBall}/>
   })
 
   useEffect(() => {

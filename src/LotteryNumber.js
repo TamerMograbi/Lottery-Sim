@@ -10,7 +10,7 @@ function LotteryNumber(props) {
     if(props.isMegaBall) {
         className = 'megaballNum'
     }
-    return <textarea className={className} rows={3} cols={5} onChange={onHandleChange} value={props.text}> </textarea>
+    return <input type="text" className={className} onChange={onHandleChange} value={props.text} />
 }
 
 export default LotteryNumber
