@@ -9,13 +9,12 @@ input{
 }
 
 .normalNum{
-    border-color: black;
+    border:1px solid #000000;
     border-width: 1px;
 }
 
 .megaballNum{
-    border-color: red;
-    border-width: 2px;
+    border:2px solid #ff0000;
 }
 
 
