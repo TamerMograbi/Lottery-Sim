@@ -11,6 +11,9 @@ function getSixRandomNums() {
       }
       
     })
-  }
-
-  export {getSixRandomNums}
+}
+//returns an array where index i contains true if numbers match
+function getMatches(arr1,arr2) {
+    return arr1.map((val,index) => val === arr2[index])
+}
+  export {getSixRandomNums,getMatches}
