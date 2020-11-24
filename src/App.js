@@ -2,6 +2,7 @@ import './css/App.css'
 import LotteryNumber from './LotteryNumber'
 import React,{useEffect, useState} from "react"
 import {getSixRandomNums,getMatches} from './util'
+import LotteryInfo from './LotteryInfo'
 
 const MEGA_BALL_INDEX = 5
 const MEGA_BALL_MAX = 25
@@ -83,11 +84,14 @@ function App() {
         {mappedLotteryNumbers}
       </div>
       <h4>Pick 5 numbers between 1-70 and the last between 1-25</h4>
-      <button className="simButton" onClick={handleClick}>{buttonText}</button> 
-      <h2>{generatednum.join(" ")}</h2>
-      <h2>closest Match: {closestMatch.join(" ")} number of Matches: {numberOfMatches}</h2>
-      <h2>Number Of Trials: {myCount}</h2>
-      {isGameWon && <h1>You won!! random = {generatednum}</h1>}
+      <button className="simButton" onClick={handleClick}>{buttonText}</button>
+      <LotteryInfo 
+        genNum={generatednum.join(" ")} 
+        closestMatch={closestMatch.join(" ")} 
+        numOfMatches={numberOfMatches} 
+        countTrials={myCount}
+        isGameWon={isGameWon}
+      />
     </div>
   )
 }
