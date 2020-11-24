@@ -40,9 +40,23 @@ function App() {
     return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={isMegaBall}/>
   })
 
+
   useEffect(() => {
     if(isSimStarted && !isGameWon) {
       setMyCount(prevCount => prevCount + 1)
+      genRandAndCheckMatches()
+    }
+  },[myCount])
+
+  async function handleClick() {
+    setIsSimStarted(prevVal => !prevVal)
+    if(!isSimStarted) {
+      setMyCount(prev => prev + 1)
+    }
+    
+  }
+
+  function genRandAndCheckMatches() {
       const rndNums = getSixRandomNums()
       const matchesArray = getMatches(rndNums,nums)
       let currentNumOfMatches = 0
@@ -59,15 +73,6 @@ function App() {
         setClosestMatch(rndNums)
       }
       setGeneratedNum(rndNums)
-    }
-  },[myCount])
-
-  async function handleClick() {
-    setIsSimStarted(prevVal => !prevVal)
-    if(!isSimStarted) {
-      setMyCount(prev => prev + 1)
-    }
-    
   }
   
   let buttonText = isSimStarted ? "Stop Sim" : "Start Sim"
