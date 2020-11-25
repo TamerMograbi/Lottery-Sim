@@ -6,3 +6,10 @@
     padding: 40px;
     border-radius: 15px;
 }
+
+.unmatched{
+    color: black;
+}
+.matched{
+    color: green;
+}

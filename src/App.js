@@ -86,8 +86,9 @@ function App() {
       <h4>Pick 5 numbers between 1-70 and the last between 1-25</h4>
       <button className="simButton" onClick={handleClick}>{buttonText}</button>
       <LotteryInfo 
+        numChosenByUser={nums}
         genNum={generatednum.join(" ")} 
-        closestMatch={closestMatch.join(" ")} 
+        closestMatch={closestMatch} 
         numOfMatches={numberOfMatches} 
         countTrials={myCount}
         isGameWon={isGameWon}
