@@ -3,6 +3,7 @@ import LotteryNumber from './LotteryNumber'
 import React,{useEffect, useState} from "react"
 import {getSixRandomNums,getMatches} from './util'
 import LotteryInfo from './LotteryInfo'
+import HugeTitleBar from './HugeTitleBar'
 
 const MEGA_BALL_INDEX = 5
 const MEGA_BALL_MAX = 25
@@ -79,7 +80,7 @@ function App() {
   let buttonText = isSimStarted ? "Stop Sim" : "Start Sim"
   return (
     <div className="App">
-        <h1> Lottery Sim</h1>
+        <HugeTitleBar/>
       <div className="NumContainer">
         {mappedLotteryNumbers}
       </div>

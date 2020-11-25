@@ -1,0 +1,9 @@
+.titleBar {
+    background-color: #282c34;
+    color: #61dafb;
+    height: 400px;
+}
+
+.title{
+    margin-left: 50px;
+}
