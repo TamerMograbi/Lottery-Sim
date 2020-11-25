@@ -35,4 +35,9 @@ function getDaysYearsPassed(num) {
   }
   return res
 }
-  export {getSixRandomNums,getMatches,getDaysYearsPassed}
+
+//assuming each ticket is $2
+function getDollars(days) {
+  return (days*2).toString()
+}
+  export {getSixRandomNums,getMatches,getDaysYearsPassed,getDollars}
