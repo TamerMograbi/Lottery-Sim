@@ -25,10 +25,11 @@ function getDaysYearsPassed(num) {
   if(num < DAYS_IN_A_YEAR) {
     res = num.toString() + ' days'
   } else if(num < DAYS_IN_A_CENTURY){
-    res = (Math.round(num/DAYS_IN_A_YEAR)).toString() + ' years ' + (num%DAYS_IN_A_YEAR).toString() + ' days'
+    res = (Math.floor(num/DAYS_IN_A_YEAR)).toString() + ' years ' + (num%DAYS_IN_A_YEAR).toString() + ' days'
   } else {
-    let centuries = Math.round(num/DAYS_IN_A_CENTURY)
-    let yearsAfterRemovingCenturies = Math.round(num%DAYS_IN_A_CENTURY/DAYS_IN_A_YEAR)
+    const centuries = Math.floor(num/DAYS_IN_A_CENTURY)
+    const daysAfterRemovingCenturies = num%DAYS_IN_A_CENTURY
+    let yearsAfterRemovingCenturies = Math.floor(daysAfterRemovingCenturies/DAYS_IN_A_YEAR)
     res = (centuries).toString() + (centuries === 1 ? ' century ' : ' centuries ')
      +  (yearsAfterRemovingCenturies).toString() + ' years'
   }
