@@ -1,9 +1,23 @@
 .titleBar {
     background-color: #282c34;
-    color: #61dafb;
     height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    font-size: 50px;
 }
 
 .title{
-    margin-left: 50px;
+    color: #61dafb;
+}
+
+p{
+    color: white;
+    font-size: 25px;
 }
