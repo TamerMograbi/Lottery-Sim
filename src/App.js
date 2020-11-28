@@ -4,6 +4,7 @@ import React,{useEffect, useState} from "react"
 import {getSixRandomNums,getMatches} from './util'
 import LotteryInfo from './LotteryInfo'
 import HugeTitleBar from './HugeTitleBar'
+import LotteryDetails from './LotteryDetails'
 
 const MEGA_BALL_INDEX = 5
 const MEGA_BALL_MAX = 25
@@ -94,6 +95,7 @@ function App() {
         countTrials={myCount}
         isGameWon={isGameWon}
       />
+      <LotteryDetails/>
     </div>
   )
 }

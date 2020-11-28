@@ -1,0 +1,11 @@
+.detailsPar{
+    color: black;
+    font-size: 20px;
+}
+
+.lotteryDetailsContainer{
+    margin-top: 90px;
+    width: 700px;
+    text-align: left;
+    margin: 90px auto 0px auto;
+}
