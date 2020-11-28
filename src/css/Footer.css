@@ -1,0 +1,10 @@
+.footerContainer{
+    background-color: #20232a;
+    margin-bottom: -50px;
+    width: 100%;
+    height: 100px;
+}
+
+.footerText{
+    color: black;
+}

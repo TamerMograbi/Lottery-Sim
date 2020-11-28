@@ -5,6 +5,7 @@ import {getSixRandomNums,getMatches} from './util'
 import LotteryInfo from './LotteryInfo'
 import HugeTitleBar from './HugeTitleBar'
 import LotteryDetails from './LotteryDetails'
+import Footer from './Footer'
 
 const MEGA_BALL_INDEX = 5
 const MEGA_BALL_MAX = 25
@@ -96,6 +97,7 @@ function App() {
         isGameWon={isGameWon}
       />
       <LotteryDetails/>
+      <Footer/>
     </div>
   )
 }
