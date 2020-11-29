@@ -8,6 +8,7 @@
 .footerText{
     color: whitesmoke;
     line-height: 100px;
-    font-size: 25px;
+    display: inline;
+    padding-bottom: 20px;
 }
 
