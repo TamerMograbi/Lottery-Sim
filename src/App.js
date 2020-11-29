@@ -34,7 +34,12 @@ function App() {
   //this map takes the set function of a state
   //and returns a function that calls it with a param t
   const handleFuncs = stateFuncs.map((curr_func) => {
-    return (t) => curr_func(t)
+    return (t) => {
+      //don't allow text larger than 2 in slots
+      if(t.length <= 2) {
+        return curr_func(t)
+      }
+    }
   })
 
   const mappedLotteryNumbers = stringNums.map((num,index) => {
