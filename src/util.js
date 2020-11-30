@@ -3,7 +3,7 @@ import {MEGA_BALL_MAX,NORMAL_BALL_MAX,MEGA_BALL_INDEX} from './App'
 const DAYS_IN_A_YEAR = 365
 const DAYS_IN_A_CENTURY = 36500
 
-function getSixRandomNums() {
+export function getSixRandomNums() {
     let rndNums = new Array(6).fill(0)
     return rndNums.map((num,index) => {
       if(index === MEGA_BALL_INDEX) {
@@ -16,11 +16,11 @@ function getSixRandomNums() {
     })
 }
 //returns an array where index i contains true if numbers match
-function getMatches(arr1,arr2) {
+export function getMatches(arr1,arr2) {
     return arr1.map((val,index) => val === arr2[index])
 }
 
-function getDaysYearsPassed(num) {
+export function getDaysYearsPassed(num) {
   let res = ""
   if(num < DAYS_IN_A_YEAR) {
     res = num.toString() + ' days'
@@ -37,11 +37,11 @@ function getDaysYearsPassed(num) {
 }
 
 //assuming each ticket is $2
-function getDollars(days) {
+export function getDollars(days) {
   return (days*2).toString()
 }
 
-function isNumericalAndLenLessThanTwo(str,index) {
+export function isNumericalAndLenLessThanTwo(str,index) {
   //want to allow empty string
   if(str.length === 0) {
     return true;
@@ -60,4 +60,3 @@ function isNumericalAndLenLessThanTwo(str,index) {
 
 
 }
-  export {getSixRandomNums,getMatches,getDaysYearsPassed,getDollars,isNumericalAndLenLessThanTwo}
