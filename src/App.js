@@ -1,7 +1,7 @@
 import './css/App.css'
 import LotteryNumber from './LotteryNumber'
 import React,{useEffect, useState} from "react"
-import {getSixRandomNums,getMatches} from './util'
+import {getSixRandomNums,getMatches,isNumericalAndLenLessThanTwo} from './util'
 import LotteryInfo from './LotteryInfo'
 import HugeTitleBar from './HugeTitleBar'
 import LotteryDetails from './LotteryDetails'
@@ -33,10 +33,10 @@ function App() {
   //instead of creating 6 handle functions
   //this map takes the set function of a state
   //and returns a function that calls it with a param t
-  const handleFuncs = stateFuncs.map((curr_func) => {
+  const handleFuncs = stateFuncs.map((curr_func, index) => {
     return (t) => {
       //don't allow text larger than 2 in slots
-      if(t.length <= 2) {
+      if(isNumericalAndLenLessThanTwo(t)) {
         return curr_func(t)
       }
     }

@@ -40,4 +40,24 @@ function getDaysYearsPassed(num) {
 function getDollars(days) {
   return (days*2).toString()
 }
-  export {getSixRandomNums,getMatches,getDaysYearsPassed,getDollars}
+
+function isNumericalAndLenLessThanTwo(str,index) {
+  //want to allow empty string
+  if(str.length === 0) {
+    return true;
+  }
+  if(str.length > 2 || isNaN(str)) {
+    return false;
+  }
+  //+str converts str into number. god damn it js
+  const num = +str
+  if(index === MEGA_BALL_INDEX) {
+    return num >= 1 && num <= MEGA_BALL_MAX
+  }
+  else {
+    return num >=1 && num <= NORMAL_BALL_MAX 
+  }
+
+
+}
+  export {getSixRandomNums,getMatches,getDaysYearsPassed,getDollars,isNumericalAndLenLessThanTwo}
