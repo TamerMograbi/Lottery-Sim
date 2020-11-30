@@ -20,7 +20,7 @@ function LotteryDetails() {
             <h2>Odds Of Winning</h2>
             <p className="detailsPar">Your odds of winning are low, and I mean real low. picking only six numbers seems not that hard
             but the first five can be any from 1-70 and the last between 1-25
-            So in order to get the odds of winning, you need to multiply 1/70 five time and multiply the result by 1/25
+            so in order to get the odds of winning, you need to multiply 1/70 five times and multiply the result by 1/25.
             In the end it turns out that your odds of winning are about 1 to 42 billion!</p>
             <p className="detailsPar">Therefore, don't be surprised when centuries pass and you still didn't win.</p>
             <h2>Things more likely to happen than winning</h2>
