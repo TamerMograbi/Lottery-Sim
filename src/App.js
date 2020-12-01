@@ -26,6 +26,7 @@ function App() {
   const [closestMatch, setClosestMatch] = useState([])
   const [numberOfMatches, setNumberOfMatches] = useState(0)
   const [isGameWon,setIsGameWon] = useState(false)
+  const [className,setClassName] = useState("")
 
   const stateFuncs = [setNum1,setNum2,setNum3,setNum4,setNum5,setNum6]
   const stringNums = [num1,num2,num3,num4,num5,num6]
@@ -39,6 +40,9 @@ function App() {
       if(isNumericalAndLenLessThanTwo(t)) {
         return curr_func(t)
       }
+      else{
+        setClassName("animation")
+      }
     }
   })
 
@@ -49,7 +53,6 @@ function App() {
     }
     return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={isMegaBall}/>
   })
-
 
   useEffect(() => {
     if(isSimStarted && !isGameWon) {
@@ -92,7 +95,10 @@ function App() {
       <div className="NumContainer">
         {mappedLotteryNumbers}
       </div>
-      <h4>Pick 5 numbers between 1-70 and the last between 1-25</h4>
+      <h4 
+      className={`pickNumText ${className}`}
+      onAnimationEnd={() => setClassName("")}
+      >Pick 5 numbers between 1-70 and the last between 1-25</h4>
       <button className="simButton" onClick={handleClick}>{buttonText}</button>
       <LotteryInfo 
         numChosenByUser={nums}
