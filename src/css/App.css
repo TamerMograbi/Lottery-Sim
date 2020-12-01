@@ -24,6 +24,7 @@
 
 .animation{
   animation: 2s shake 1 alternate;
+  color:red;
 }
 
 @keyframes shake {
