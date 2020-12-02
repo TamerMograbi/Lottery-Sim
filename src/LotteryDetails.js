@@ -28,8 +28,8 @@ function LotteryDetails() {
             <p className="detailsPar">Odds are 1 in 112 million to get crushed by a vending machine and die.</p>
             <h3>Getting Struck By Lightning</h3>
             <p className="detailsPar">Odds are 1 in a million.</p>
-            <h3>Death from a car crash</h3>
-            <p className="detailsPar">Better walk instead of drive to get your ticket.</p>
+            <h3>Crushed By A Meteor</h3>
+            <p className="detailsPar">Odds are 1 in 700,000</p>
             <h3>Becoming an astronaut</h3>
             <p className="detailsPar">Odds are 1 in 12 million.</p>
         </div>
