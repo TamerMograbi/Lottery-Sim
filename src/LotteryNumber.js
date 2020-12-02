@@ -7,10 +7,14 @@ function LotteryNumber(props) {
         props.onNumChange(value)
     }
     let className = 'normalNum'
+    let animationClass = ''
     if(props.isMegaBall) {
         className = 'megaballNum'
     }
-    return <input type="text" className={className} onChange={onHandleChange} value={props.text} />
+    if(props.slotIndex === props.animationClassName[1]) {
+        animationClass = 'animation'
+    }
+    return <input type="text" className={`${className} ${animationClass}`} onChange={onHandleChange} value={props.text} />
 }
 
 export default LotteryNumber

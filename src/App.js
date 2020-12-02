@@ -26,7 +26,7 @@ function App() {
   const [closestMatch, setClosestMatch] = useState([])
   const [numberOfMatches, setNumberOfMatches] = useState(0)
   const [isGameWon,setIsGameWon] = useState(false)
-  const [className,setClassName] = useState("")
+  const [animationClassAndIndex,setClassName] = useState([])
 
   const stateFuncs = [setNum1,setNum2,setNum3,setNum4,setNum5,setNum6]
   const stringNums = [num1,num2,num3,num4,num5,num6]
@@ -41,7 +41,7 @@ function App() {
         return curr_func(t)
       }
       else{
-        setClassName("animation")
+        setClassName(["animation",index])
       }
     }
   })
@@ -51,7 +51,16 @@ function App() {
     if(index === MEGA_BALL_INDEX) {
       isMegaBall = true
     }
-    return <LotteryNumber key={index} text={num} onNumChange={handleFuncs[index]} isMegaBall={isMegaBall}/>
+    return (
+      <LotteryNumber 
+      key={index}
+      text={num}
+      onNumChange={handleFuncs[index]}
+      isMegaBall={isMegaBall}
+      animationClassName={animationClassAndIndex}
+      slotIndex={index}
+      />
+    )
   })
 
   useEffect(() => {
@@ -96,7 +105,7 @@ function App() {
         {mappedLotteryNumbers}
       </div>
       <h4 
-      className={`pickNumText ${className}`}
+      className={`pickNumText ${animationClassAndIndex[0]}`}
       onAnimationEnd={() => setClassName("")}
       >Pick 5 numbers between 1-70 and the last between 1-25</h4>
       <button className="simButton" onClick={handleClick}>{buttonText}</button>
