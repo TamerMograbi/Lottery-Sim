@@ -37,7 +37,7 @@ function App() {
   const handleFuncs = stateFuncs.map((curr_func, index) => {
     return (t) => {
       //don't allow text larger than 2 in slots
-      if(isNumericalAndLenLessThanTwo(t)) {
+      if(isNumericalAndLenLessThanTwo(t,index)) {
         return curr_func(t)
       }
       else{
