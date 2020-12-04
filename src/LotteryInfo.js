@@ -5,8 +5,9 @@ import {getDaysYearsPassed,getDollars} from './util'
 function LotteryInfo(props) {
     const numOfTrials = getDaysYearsPassed(props.countTrials)
     const dollarsSpent = getDollars(props.countTrials)
-
-    const mappedSpans = props.closestMatch.map( (val,index) => {
+    const matchesLen = props.closestMatch.length
+    console.log(props.closestMatch)
+    const mappedSpans = props.closestMatch[matchesLen - 1]?.map( (val,index) => {
         if(props.closestMatch.length === 0) {
             return ""
         }

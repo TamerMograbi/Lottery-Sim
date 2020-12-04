@@ -92,7 +92,13 @@ function App() {
       }
       if(currentNumOfMatches > numberOfMatches) {
         setNumberOfMatches(currentNumOfMatches)
-        setClosestMatch(rndNums)
+        setClosestMatch(prevMatches => {
+          //a weird bug happens if I change prevMatches directly and return it
+          //where it somehow calls push twice
+          let clonePrevMatches = [...prevMatches]
+          clonePrevMatches.push(rndNums)
+          return clonePrevMatches
+        })
       }
       setGeneratedNum(rndNums)
   }
