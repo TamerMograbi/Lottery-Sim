@@ -1,4 +1,5 @@
 # Lottery Sim
+![alt text](https://raw.githubusercontent.com/TamerMograbi/Lottery-Sim/master/images/Lottery_sim.png)
 Building small project to learn React and js
 # Arch
 Deployed in the US and Europe, each region has 10 Load balancers and up to 10k auto scaling group.
