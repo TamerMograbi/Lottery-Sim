@@ -10,3 +10,5 @@ to amazon docs, auto scales and expands faster than the cosmos itself.
 # Real Arch
 I created this website in order to learn React and javascript. and deployed it on
 heroku so I can easily access it from anywhere.
+# Try it
+https://lottery-simulator.herokuapp.com/
