@@ -8,7 +8,7 @@ function LotteryDetails() {
             <p className="detailsPar">
             1. Pick 6 numbers, the first 5 between 1-70 and the
             last one between 1-25.<br/>
-            2. Click the Start sim button.
+            2. Click the start sim button.
             </p>
             <h2>About The Sim</h2>
             <p className="detailsPar">
@@ -39,8 +39,7 @@ function LotteryDetails() {
             result by 1/25. In the end it turns out that your odds
             of winning are about 1 to 42 billion!
             Therefore, don't be surprised when centuries pass
-            and you still didn't win.<br/>
-            Therefore, don't be surprised when centuries pass and you still didn't win.
+            and you still have not won.<br/>
             </p>
             <h2>Things more likely to happen than winning</h2>
             <h3>Death By Vending Machine</h3>
